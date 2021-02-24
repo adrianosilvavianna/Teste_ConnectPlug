@@ -14,6 +14,33 @@ return [
     */
     'lang' => 'en',
     'dashboard' => 'Dashboard',
-    'products'  => 'Products'
+    'product'  => 'Products',
+    'attribute' => 'Attributes',
+    'inventory' => 'Inventory',
+    'name' => 'Name',
+    'create' => 'Create',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'submit' => 'Submit',
+    'empty' => 'Empty',
+    'products'  => [
+        "all" => "All Products",
+        "create" => "Create New Product",
+        "update" => "Update This Product",
+        "delete" => "Delete This `Product",
+        "empty"  => "No Products",
+        "cod" => "Code",
+        "file" => "Select an image",
+    ],
+
+    'attributes' => [
+        'add' => "Add Type",
+    ],
+
+    'inventories' => [
+        'quantity' => 'Quantity',
+        'unit_cost' => 'Unit Cost',
+        'total_cost' => 'Total Cost'
+    ]
 
 ];

@@ -18,19 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/setLocale', 'HomeController@changeLocale')->name('changeLocale');
 
-Route::get('/setLocale/{locale}', function ($locale) {
-    if (! in_array($locale, ['en', 'pt-br'])) {
-        abort(400);
-    }
+Route::get('/lang/{lang}', 'HomeController@changeLocale')->name('changeLocale');
 
-    $locale == 'en' ? App::setLocale('pt-br') : App::setLocale('en');
-
-    App::setLocale($locale);
-
-    return redirect()->back();
-});
 
 Auth::routes();
 

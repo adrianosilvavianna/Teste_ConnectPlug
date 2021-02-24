@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Products;
 use App\Attribute;
-use App;
-use Illuminate\Support\Facades\App as FacadesApp;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -27,6 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
 /**        $product = Products::create([
             'name' => 'camisa',
             'codigo' => '123',
@@ -56,16 +59,17 @@ class HomeController extends Controller
         //$user = \Auth::user()->manager;
         //$locale = \App::getLocale();
         //dd($locale);
+        
         return view('home');
     }
 
-    public function changeLocale()
+    public function changeLocale($lang)
     {
-        
-        $locale = \App::getLocale();
+        if (array_key_exists($lang, Config::get('languages'))) {
+            session()->put('applocale', $lang);
+        }
 
-        $locale == 'en' ? env('LOCALE', 'pt-br') :  env('LOCALE','en');
-     
-        return $this->index();
+        return Redirect::back();
+    
     }
 }

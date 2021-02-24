@@ -23,7 +23,7 @@
                             </li>
                             
                         @empty 
-                            <li class="list-group-item">{{ __('app.produto.empty') }}</li>
+                            <li class="list-group-item">{{ __('app.products.empty') }}</li>
                         @endforelse
                     </ul>
                 </div>
